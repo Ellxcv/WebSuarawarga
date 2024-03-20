@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuaraWarga Register</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="welcome-container">
+        <img
+          src="icon/government128px.png"
+          alt="Government logo"
+          class="logo"
+        />
+        <h1>Register</h1>
+      </div>
+    </header>
+    <main>
+      <form action="/register" method="post">
+        <label for="name"><img src="icon/id-card.png" alt="Name" />Nama:</label
+        ><br />
+        <input type="text" id="name" name="name" required /><br />
+        <label for="email"
+          ><img src="icon/mail64px.png" alt="Email" />Email:</label
+        ><br />
+        <input type="email" id="email" name="email" required /><br />
+        <label for="username"
+          ><img src="icon/user64px.png" alt="Username" />Username:</label
+        ><br />
+        <input type="text" id="username" name="username" required /><br />
+        <label for="password"
+          ><img src="icon/padlock64px.png" alt="Password" />Password:</label
+        ><br />
+        <input type="password" id="password" name="password" required /><br />
+        <label for="confirm-password"
+          ><img src="icon/padlock64px.png" alt="CPassword" />Confirm
+          Password:</label
+        ><br />
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        /><br />
+        <input type="submit" value="Register" />
+      </form>
+      <p>Sudah Punya Akun? <a href="login.html">Login</a></p>
+    </main>
+  </body>
+</html>

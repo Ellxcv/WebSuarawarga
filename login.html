@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuaraWarga Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="welcome-container">
+        <img
+          src="icon/government128px.png"
+          alt="Government logo"
+          class="logo"
+        />
+        <h1>Login</h1>
+      </div>
+    </header>
+    <main>
+      <form action="/login" method="post">
+        <label for="username"
+          ><img src="icon/user64px.png" alt="Username" />Username:</label
+        ><br />
+        <input type="text" id="username" name="username" required /><br />
+        <label for="password"
+          ><img src="icon/padlock64px.png" alt="Password" />Password:</label
+        ><br />
+        <input type="password" id="password" name="password" required /><br />
+        <input type="submit" value="Login" />
+      </form>
+      <p>Tidak punya akun? <a href="register.html">Register</a></p>
+    </main>
+  </body>
+</html>

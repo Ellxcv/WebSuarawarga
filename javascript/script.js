@@ -52,3 +52,16 @@ function moveSlider(direction) {
     { once: true }
   ); // Remove the event listener after it's triggered once
 }
+
+const newSection = document.querySelector(".new-section"),
+  overlay = newSection.querySelector(".overlay"),
+  showModalBtn = newSection.querySelector(".show-modal"),
+  closeBtn = newSection.querySelector(".close-btn");
+
+showModalBtn.addEventListener("click", () =>
+  newSection.classList.add("active")
+);
+
+overlay.addEventListener("click", () => newSection.classList.remove("active"));
+
+closeBtn.addEventListener("click", () => newSection.classList.remove("active"));

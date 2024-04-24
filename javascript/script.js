@@ -1,10 +1,26 @@
 var navLinks = document.getElementById("navLinks");
+
+// Menyimpan status menu navigasi saat dipilih
 function showMenu() {
   navLinks.style.right = "0";
+  localStorage.setItem("menuStatus", "shown"); // Menyimpan status menu "shown" ke localStorage
 }
+
 function hideMenu() {
   navLinks.style.right = "-200px";
+  localStorage.setItem("menuStatus", "hidden"); // Menyimpan status menu "hidden" ke localStorage
 }
+
+// Memeriksa dan mengambil status menu saat halaman dimuat
+document.addEventListener("DOMContentLoaded", function () {
+  let menuStatus = localStorage.getItem("menuStatus");
+
+  if (menuStatus === "shown") {
+    showMenu();
+  } else {
+    hideMenu();
+  }
+});
 
 let nextBtn = document.querySelector(".next");
 let prevBtn = document.querySelector(".prev");
@@ -50,18 +66,33 @@ function moveSlider(direction) {
       }
     },
     { once: true }
-  ); // Remove the event listener after it's triggered once
+  );
 }
 
-const newSection = document.querySelector(".new-section"),
-  overlay = newSection.querySelector(".overlay"),
-  showModalBtn = newSection.querySelector(".show-modal"),
-  closeBtn = newSection.querySelector(".close-btn");
+const newSection = document.querySelector(".new-section");
+const overlay = newSection.querySelector(".overlay");
+const showModalBtn = newSection.querySelector(".show-modal");
+const closeBtn = newSection.querySelector(".close-btn");
 
-showModalBtn.addEventListener("click", () =>
-  newSection.classList.add("active")
-);
+showModalBtn.addEventListener("click", () => {
+  newSection.classList.add("active");
+  showAlert();
+});
 
 overlay.addEventListener("click", () => newSection.classList.remove("active"));
 
 closeBtn.addEventListener("click", () => newSection.classList.remove("active"));
+
+function showAlert() {
+  // Menampilkan alert
+  alert("Ini adalah pesan alert!");
+
+  // Menampilkan confirm
+  let confirmation = confirm("Apakah Anda yakin ingin melanjutkan?");
+
+  if (confirmation) {
+    console.log("Pengguna menekan OK!");
+  } else {
+    console.log("Pengguna menekan Cancel!");
+  }
+}
